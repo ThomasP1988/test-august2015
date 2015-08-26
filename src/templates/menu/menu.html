@@ -1,0 +1,7 @@
+test
+<ul class="nav nav-tabs">
+    <li role="presentation" ng-repeat="collection in collections" ng-class="{'active' : selectedSlugCollection == collection.slug}">
+        <a ui-sref='collection({collection: collection.slug})'>{{collection.name}}</a>
+    </li>
+</ul>
+<div ui-view="menu.collection"></div>

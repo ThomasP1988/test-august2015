@@ -1,0 +1,25 @@
+{
+  "name": "developer_test",
+  "version": "0.0.0",
+  "main": "src/index.html",
+  "keywords": [
+    "test",
+    "angularjs",
+    "thomaspoli"
+  ],
+  "authors": [
+    "Thomas Poli"
+  ],
+  "license": "MIT",
+  "homepage": "thomaspoli.com",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.3.5"
+  }
+}

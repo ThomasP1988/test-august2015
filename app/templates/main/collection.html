@@ -1,0 +1,27 @@
+<script type="text/ng-template" id="collection.html">
+    <div class="row" ng-class="{'padding-bottom' : !!activeItem}">
+        <div class="col-xs-6 col-md-3" ng-repeat="bouquet in collectionToShow">
+            <div class="text-center">{{ bouquet.name }}</div>
+            <a class="thumbnail price" ng-click="sortPricing(bouquet.pricings, bouquet)"
+               ng-class="{'active-item' : activeItem === bouquet.id}">
+                <img ng-if="bouquet.default_bouquet.image_urls.website_medium"
+                     ng-src="{{bouquet.default_bouquet.image_urls.website_medium}}"
+                     alt="bouquet.default_bouquet.description" imageonload>
+                <img ng-if="!bouquet.default_bouquet.image_urls.website_medium" src="img/no_image_available.png"
+                     alt="bouquet.default_bouquet.description" imageonload>
+                <span>{{ getLowerPrice(bouquet) }} £</span>
+            </a>
+        </div>
+    </div>
+    <div class="bottom" ng-show="!!activeItem">
+        <div class="text-center">
+            <h3>{{ selectedPricing.quantity }} develeries</h3>
+        </div>
+        <div ui-slider="slider.options"
+             min="0"
+             max="{{ lengthPricing }}"
+             ng-model="sliderValue">
+        </div>
+        <div class="text-center"><h2>{{ selectedPricing.amount }} £</h2></div>
+    </div>
+</script>
